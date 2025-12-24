@@ -46,7 +46,7 @@ curl -f http://localhost:8080/service1 || exit 1
 echo "Checking Service 2..."
 curl -f http://localhost:8080/service2 || exit 1
 
-echo "✅ All services are healthy"
+echo " All services are healthy"
 
 ```
 chmod +x healthcheck.sh
