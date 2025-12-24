@@ -1,15 +1,22 @@
-version: '3.8'
+version: "3.9"
 services:
   service_1:
     build: ./service_1
+    container_name: service_1
     ports:
-      - "8080:80"
+      - "8080:8080"
+  
   service_2:
     build: ./service_2
+    container_name: service_2
     ports:
-      - "5000:80"
+      - "5000:5000"
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    ports:
+      - "80:80"
     depends_on:
       - service_1
-    environment:
-      - SERVICE_1_URL=http://service_1:8080
-  
+      - service_2
